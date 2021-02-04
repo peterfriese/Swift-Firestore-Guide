@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Book: Codable {
+public struct Book: Codable {
   var title: String
   var numberOfPages: Int
   var author: String
