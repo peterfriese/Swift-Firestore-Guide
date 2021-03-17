@@ -14,8 +14,8 @@ struct FirestoreCodableSamplesApp: App {
     FirebaseApp.configure()
     
     // connect to Firestore Emulator
+    Firestore.firestore().useEmulator(withHost: "localhost", port: 8080)
     let settings = Firestore.firestore().settings
-    settings.host = "localhost:8080"
     settings.isPersistenceEnabled = false
     settings.isSSLEnabled = false
     Firestore.firestore().settings = settings
@@ -23,7 +23,9 @@ struct FirestoreCodableSamplesApp: App {
   
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      NavigationView {
+        MenuScreen()
+      }
     }
   }
 }

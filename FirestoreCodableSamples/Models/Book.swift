@@ -12,3 +12,7 @@ public struct Book: Codable {
   var numberOfPages: Int
   var author: String
 }
+
+extension Book {
+  static let empty = Book(title: "", numberOfPages: 0, author: "")
+}
