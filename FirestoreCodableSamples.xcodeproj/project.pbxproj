@@ -16,6 +16,11 @@
 		8845C98726020601008F2FA2 /* SampleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C98626020601008F2FA2 /* SampleScreen.swift */; };
 		8845C98A26020FA3008F2FA2 /* MappingSimpleTypesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C98926020FA3008F2FA2 /* MappingSimpleTypesScreen.swift */; };
 		8845C98C260346A9008F2FA2 /* ManuallyMappingSimpleTypesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C98B260346A9008F2FA2 /* ManuallyMappingSimpleTypesScreen.swift */; };
+		8845C98E260383C6008F2FA2 /* BookWithGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C98D260383C6008F2FA2 /* BookWithGenre.swift */; };
+		8845C99026038433008F2FA2 /* MappingArraysScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C98F26038433008F2FA2 /* MappingArraysScreen.swift */; };
+		8845C9922603A15A008F2FA2 /* BookWithTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9912603A15A008F2FA2 /* BookWithTags.swift */; };
+		8845C9942603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9932603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift */; };
+		8845C9962603A74C008F2FA2 /* BookWithCoverImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9952603A74C008F2FA2 /* BookWithCoverImages.swift */; };
 		887DD2B425C47A23003F7A99 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DD2B325C47A23003F7A99 /* Book.swift */; };
 		888F881425C46A9C00DCE039 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 888F881325C46A9C00DCE039 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -30,6 +35,11 @@
 		8845C98626020601008F2FA2 /* SampleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleScreen.swift; sourceTree = "<group>"; };
 		8845C98926020FA3008F2FA2 /* MappingSimpleTypesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingSimpleTypesScreen.swift; sourceTree = "<group>"; };
 		8845C98B260346A9008F2FA2 /* ManuallyMappingSimpleTypesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallyMappingSimpleTypesScreen.swift; sourceTree = "<group>"; };
+		8845C98D260383C6008F2FA2 /* BookWithGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWithGenre.swift; sourceTree = "<group>"; };
+		8845C98F26038433008F2FA2 /* MappingArraysScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingArraysScreen.swift; sourceTree = "<group>"; };
+		8845C9912603A15A008F2FA2 /* BookWithTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWithTags.swift; sourceTree = "<group>"; };
+		8845C9932603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingArraysWithNestedTypesScreen.swift; sourceTree = "<group>"; };
+		8845C9952603A74C008F2FA2 /* BookWithCoverImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWithCoverImages.swift; sourceTree = "<group>"; };
 		887DD2B325C47A23003F7A99 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		888F881325C46A9C00DCE039 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,8 +110,10 @@
 			isa = PBXGroup;
 			children = (
 				8845C98426020142008F2FA2 /* MenuScreen.swift */,
-				8845C98926020FA3008F2FA2 /* MappingSimpleTypesScreen.swift */,
 				8845C98B260346A9008F2FA2 /* ManuallyMappingSimpleTypesScreen.swift */,
+				8845C98926020FA3008F2FA2 /* MappingSimpleTypesScreen.swift */,
+				8845C98F26038433008F2FA2 /* MappingArraysScreen.swift */,
+				8845C9932603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -125,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				887DD2B325C47A23003F7A99 /* Book.swift */,
+				8845C98D260383C6008F2FA2 /* BookWithGenre.swift */,
+				8845C9912603A15A008F2FA2 /* BookWithTags.swift */,
+				8845C9952603A74C008F2FA2 /* BookWithCoverImages.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,8 +228,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8845C98E260383C6008F2FA2 /* BookWithGenre.swift in Sources */,
+				8845C9922603A15A008F2FA2 /* BookWithTags.swift in Sources */,
 				8845C98526020142008F2FA2 /* MenuScreen.swift in Sources */,
+				8845C9962603A74C008F2FA2 /* BookWithCoverImages.swift in Sources */,
+				8845C99026038433008F2FA2 /* MappingArraysScreen.swift in Sources */,
 				8845C98726020601008F2FA2 /* SampleScreen.swift in Sources */,
+				8845C9942603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift in Sources */,
 				887DD2B425C47A23003F7A99 /* Book.swift in Sources */,
 				8845C98C260346A9008F2FA2 /* ManuallyMappingSimpleTypesScreen.swift in Sources */,
 				8845C98A26020FA3008F2FA2 /* MappingSimpleTypesScreen.swift in Sources */,

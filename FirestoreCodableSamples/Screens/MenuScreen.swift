@@ -25,7 +25,12 @@ struct MenuScreen: View {
           }
         }
         Section(header: Text("Mapping complex types")) {
-          Label("Mapping arrays and dictionaries", systemImage: "square.stack.3d.down.forward")
+          NavigationLink(destination: MappingArraysScreen()) {
+            Label("Mapping arrays", systemImage: "square.stack.3d.down.forward")
+          }
+          NavigationLink(destination: MappingArraysWithNestedTypesScreen()) {
+            Label("Mapping arrays with nested types", systemImage: "square.stack.3d.down.forward")
+          }
           Label("Mapping dates and times", systemImage: "calendar.badge.clock")
           Label("Mapping GeoPoints", systemImage: "globe")
           Label("Mapping Colors", systemImage: "paintpalette")
