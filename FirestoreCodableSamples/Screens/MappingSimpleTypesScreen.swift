@@ -66,6 +66,29 @@ class MappingSimpleTypesViewModel: ObservableObject {
       }
     }
   }
+  
+  func updateBook() {
+    if let id = book.id {
+      let docRef = db.collection("books").document(id)
+      do {
+        try docRef.setData(from: book)
+      }
+      catch {
+        print(error)
+      }
+    }
+  }
+  
+  func addBook() {
+    let collectionRef = db.collection("books")
+    do {
+      let newDocReference = try collectionRef.addDocument(from: self.book)
+      print("Book stored with new document reference: \(newDocReference)")
+    }
+    catch {
+      print(error)
+    }
+  }
 }
 
 struct MappingSimpleTypesScreen: View {
@@ -90,14 +113,21 @@ struct MappingSimpleTypesScreen: View {
           TextField("Author", text: $viewModel.book.author)
         }
         Section(header: Text("Actions")) {
-          Button("Fetch and map a book") {
-            viewModel.fetchAndMap()
+          Button(action: viewModel.fetchAndMap) {
+            Label("Fetch and map a book", systemImage: "square.and.arrow.up")
           }
-          Button("Fetch and map a non-existing book") {
-            viewModel.fetchAndMapNonExisting()
+          Button(action: viewModel.fetchAndMapNonExisting) {
+            Label("Fetch and map a non-existing book", systemImage: "square.and.arrow.up")
           }
-          Button("Try mapping book from invalid data") {
-            viewModel.fetchAndTryMappingInvalidData()
+          Button(action: viewModel.fetchAndTryMappingInvalidData) {
+            Label("Try mapping book from invalid data", systemImage: "square.and.arrow.up")
+          }
+
+          Button(action: viewModel.updateBook) {
+            Label("Udpate book", systemImage: "square.and.arrow.down")
+          }
+          Button(action: viewModel.addBook) {
+            Label("Add Book", systemImage: "plus")
           }
         }
       }
