@@ -27,18 +27,6 @@ class MappingSimpleTypesViewModel: ObservableObject {
     fetchBook(documentId: "invalid-data")
   }
   
-  private func fetchBook2(documentId: String) {
-    let docRef = db.collection("books").document(documentId)
-    
-    docRef.getDocument { document, error in
-      if let document = document, document.exists {
-        if let book = try? document.data(as: Book.self) {
-          print(book)
-        }
-      }
-    }
-  }
-  
   private func fetchBook(documentId: String) {
     let docRef = db.collection("books").document(documentId)
     
