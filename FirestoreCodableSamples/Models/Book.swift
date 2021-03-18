@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 public struct Book: Codable {
+  @DocumentID var id: String? = UUID().uuidString
   var title: String
   var numberOfPages: Int
   var author: String

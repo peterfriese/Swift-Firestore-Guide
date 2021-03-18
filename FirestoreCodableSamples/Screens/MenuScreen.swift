@@ -14,6 +14,11 @@ struct MenuScreen: View {
                   + "To run this demo, install the Firebase Emulator Suite and run the 'start.sh' script in the root folder of this project.")
     {
       Form {
+        Section(header: Text("Mapping manually")) {
+          NavigationLink(destination: ManuallyMappingSimpleTypesScreen()) {
+            Label("Mapping simple types", systemImage: "hand.draw")
+          }
+        }
         Section(header: Text("Mapping simple types")) {
           NavigationLink(destination: MappingSimpleTypesScreen()) {
             Label("Mapping simple types", systemImage: "list.bullet.rectangle")
