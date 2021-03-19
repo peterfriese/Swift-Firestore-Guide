@@ -21,6 +21,9 @@
 		8845C9922603A15A008F2FA2 /* BookWithTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9912603A15A008F2FA2 /* BookWithTags.swift */; };
 		8845C9942603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9932603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift */; };
 		8845C9962603A74C008F2FA2 /* BookWithCoverImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9952603A74C008F2FA2 /* BookWithCoverImages.swift */; };
+		8845C9982603C853008F2FA2 /* MappingCustomTypesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9972603C853008F2FA2 /* MappingCustomTypesScreen.swift */; };
+		8845C99A2603E733008F2FA2 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9992603E733008F2FA2 /* Color+Codable.swift */; };
+		8845C99D2603E8FF008F2FA2 /* iColor in Frameworks */ = {isa = PBXBuildFile; productRef = 8845C99C2603E8FF008F2FA2 /* iColor */; };
 		887DD2B425C47A23003F7A99 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DD2B325C47A23003F7A99 /* Book.swift */; };
 		888F881425C46A9C00DCE039 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 888F881325C46A9C00DCE039 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -40,6 +43,8 @@
 		8845C9912603A15A008F2FA2 /* BookWithTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWithTags.swift; sourceTree = "<group>"; };
 		8845C9932603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingArraysWithNestedTypesScreen.swift; sourceTree = "<group>"; };
 		8845C9952603A74C008F2FA2 /* BookWithCoverImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWithCoverImages.swift; sourceTree = "<group>"; };
+		8845C9972603C853008F2FA2 /* MappingCustomTypesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingCustomTypesScreen.swift; sourceTree = "<group>"; };
+		8845C9992603E733008F2FA2 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 		887DD2B325C47A23003F7A99 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		888F881325C46A9C00DCE039 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +56,7 @@
 			files = (
 				8805D39425D49A7300851C96 /* FirebaseFirestore in Frameworks */,
 				8805D39625D49A7300851C96 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				8845C99D2603E8FF008F2FA2 /* iColor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,7 @@
 				8845C98426020142008F2FA2 /* MenuScreen.swift */,
 				8845C98B260346A9008F2FA2 /* ManuallyMappingSimpleTypesScreen.swift */,
 				8845C98926020FA3008F2FA2 /* MappingSimpleTypesScreen.swift */,
+				8845C9972603C853008F2FA2 /* MappingCustomTypesScreen.swift */,
 				8845C98F26038433008F2FA2 /* MappingArraysScreen.swift */,
 				8845C9932603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift */,
 			);
@@ -122,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				8845C98626020601008F2FA2 /* SampleScreen.swift */,
+				8845C9992603E733008F2FA2 /* Color+Codable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 			packageProductDependencies = (
 				8805D39325D49A7300851C96 /* FirebaseFirestore */,
 				8805D39525D49A7300851C96 /* FirebaseFirestoreSwift-Beta */,
+				8845C99C2603E8FF008F2FA2 /* iColor */,
 			);
 			productName = FirestoreCodableSamples;
 			productReference = 8845BD7625C46965002AEC45 /* FirestoreCodableSamples.app */;
@@ -200,6 +209,7 @@
 			mainGroup = 8845BD6D25C46965002AEC45;
 			packageReferences = (
 				8805D39225D49A7300851C96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8845C99B2603E8FE008F2FA2 /* XCRemoteSwiftPackageReference "iColor" */,
 			);
 			productRefGroup = 8845BD7725C46965002AEC45 /* Products */;
 			projectDirPath = "";
@@ -237,7 +247,9 @@
 				8845C9942603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift in Sources */,
 				887DD2B425C47A23003F7A99 /* Book.swift in Sources */,
 				8845C98C260346A9008F2FA2 /* ManuallyMappingSimpleTypesScreen.swift in Sources */,
+				8845C9982603C853008F2FA2 /* MappingCustomTypesScreen.swift in Sources */,
 				8845C98A26020FA3008F2FA2 /* MappingSimpleTypesScreen.swift in Sources */,
+				8845C99A2603E733008F2FA2 /* Color+Codable.swift in Sources */,
 				8845BD7A25C46965002AEC45 /* FirestoreCodableSamplesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +449,14 @@
 				minimumVersion = 7.8.0;
 			};
 		};
+		8845C99B2603E8FE008F2FA2 /* XCRemoteSwiftPackageReference "iColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iSwiftUIHome/iColor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -449,6 +469,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8805D39225D49A7300851C96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		8845C99C2603E8FF008F2FA2 /* iColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8845C99B2603E8FE008F2FA2 /* XCRemoteSwiftPackageReference "iColor" */;
+			productName = iColor;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

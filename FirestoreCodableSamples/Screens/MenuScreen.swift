@@ -16,7 +16,7 @@ struct MenuScreen: View {
       Form {
         Section(header: Text("Mapping manually")) {
           NavigationLink(destination: ManuallyMappingSimpleTypesScreen()) {
-            Label("Mapping simple types", systemImage: "hand.draw")
+            Label("Manually mapping simple types", systemImage: "hand.draw")
           }
         }
         Section(header: Text("Mapping simple types")) {
@@ -25,11 +25,14 @@ struct MenuScreen: View {
           }
         }
         Section(header: Text("Mapping complex types")) {
+          NavigationLink(destination: MappingCustomTypesScreen()) {
+            Label("Mapping custom types", systemImage: "rectangle.3.offgrid")
+          }
           NavigationLink(destination: MappingArraysScreen()) {
             Label("Mapping arrays", systemImage: "square.stack.3d.down.forward")
           }
           NavigationLink(destination: MappingArraysWithNestedTypesScreen()) {
-            Label("Mapping arrays with nested types", systemImage: "square.stack.3d.down.forward")
+            Label("Mapping arrays w/ custom types", systemImage: "square.stack.3d.down.forward")
           }
           Label("Mapping dates and times", systemImage: "calendar.badge.clock")
           Label("Mapping GeoPoints", systemImage: "globe")
