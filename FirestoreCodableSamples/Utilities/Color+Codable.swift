@@ -24,8 +24,14 @@ extension Color: Codable {
   public init(from decoder: Decoder) throws {
     let container = try decoder.singleValueContainer()
     let hex = try container.decode(String.self)
+
+    let rgba = hex.toRGBA()
     
-    self.init(hex: hex)
+    self.init(.sRGB,
+              red: Double(rgba.r),
+              green: Double(rgba.g),
+              blue: Double(rgba.b),
+              opacity: Double(rgba.alpha))
   }
   
   public func encode(to encoder: Encoder) throws {
@@ -52,17 +58,17 @@ extension Color: Codable {
     }
     
     if alpha {
-      return String(format: "%02lX%02lX%02lX%02lX",
+      return String(format: "#%02lX%02lX%02lX%02lX",
                     lroundf(r * 255),
                     lroundf(g * 255),
                     lroundf(b * 255),
-                    lroundf(a * 255))
+                    lroundf(a * 255)).lowercased()
     }
     else {
-      return String(format: "%02lX%02lX%02lX",
+      return String(format: "#%02lX%02lX%02lX",
                     lroundf(r * 255),
                     lroundf(g * 255),
-                    lroundf(b * 255))
+                    lroundf(b * 255)).lowercased()
     }
   }
 }

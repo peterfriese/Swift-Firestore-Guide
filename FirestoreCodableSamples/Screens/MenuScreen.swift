@@ -36,7 +36,9 @@ struct MenuScreen: View {
           }
           Label("Mapping dates and times", systemImage: "calendar.badge.clock")
           Label("Mapping GeoPoints", systemImage: "globe")
-          Label("Mapping Colors", systemImage: "paintpalette")
+          NavigationLink(destination: MappingColorsScreen()) {
+            Label("Mapping Colors", systemImage: "paintpalette")
+          }
           Label("Mapping Enums", systemImage: "list.number")
         }
         Section(header: Text("Custom mapping")) {

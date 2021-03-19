@@ -25,6 +25,7 @@
 		8845C99A2603E733008F2FA2 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9992603E733008F2FA2 /* Color+Codable.swift */; };
 		8845C99D2603E8FF008F2FA2 /* iColor in Frameworks */ = {isa = PBXBuildFile; productRef = 8845C99C2603E8FF008F2FA2 /* iColor */; };
 		8845C99F2604C064008F2FA2 /* Color+FontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C99E2604C064008F2FA2 /* Color+FontColor.swift */; };
+		8845C9A12604C5AE008F2FA2 /* MappingColorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9A02604C5AD008F2FA2 /* MappingColorsScreen.swift */; };
 		887DD2B425C47A23003F7A99 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DD2B325C47A23003F7A99 /* Book.swift */; };
 		888F881425C46A9C00DCE039 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 888F881325C46A9C00DCE039 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		8845C9972603C853008F2FA2 /* MappingCustomTypesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingCustomTypesScreen.swift; sourceTree = "<group>"; };
 		8845C9992603E733008F2FA2 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 		8845C99E2604C064008F2FA2 /* Color+FontColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+FontColor.swift"; sourceTree = "<group>"; };
+		8845C9A02604C5AD008F2FA2 /* MappingColorsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingColorsScreen.swift; sourceTree = "<group>"; };
 		887DD2B325C47A23003F7A99 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		888F881325C46A9C00DCE039 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 				8845C9972603C853008F2FA2 /* MappingCustomTypesScreen.swift */,
 				8845C98F26038433008F2FA2 /* MappingArraysScreen.swift */,
 				8845C9932603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift */,
+				8845C9A02604C5AD008F2FA2 /* MappingColorsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				8845C98726020601008F2FA2 /* SampleScreen.swift in Sources */,
 				8845C9942603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift in Sources */,
 				887DD2B425C47A23003F7A99 /* Book.swift in Sources */,
+				8845C9A12604C5AE008F2FA2 /* MappingColorsScreen.swift in Sources */,
 				8845C98C260346A9008F2FA2 /* ManuallyMappingSimpleTypesScreen.swift in Sources */,
 				8845C9982603C853008F2FA2 /* MappingCustomTypesScreen.swift in Sources */,
 				8845C98A26020FA3008F2FA2 /* MappingSimpleTypesScreen.swift in Sources */,
