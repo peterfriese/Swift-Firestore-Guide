@@ -89,9 +89,9 @@ class MappingArraysWithNestedTypesViewModel: ObservableObject {
   }
   
   private var tags: Set = [
-    Tag(title: "Space", color: "#131a2d"),
-    Tag(title: "Tea", color: "#d8bfbf"),
-    Tag(title: "Improbability", color: "#fd1d48"),
+    Tag(title: "Space", color: Color(hex: "#131a2d")),
+    Tag(title: "Tea", color: Color(hex: "#d8bfbf")),
+    Tag(title: "Improbability", color: Color(hex: "#fd1d48")),
   ]
 
   func addTag() {
@@ -126,6 +126,11 @@ struct MappingArraysWithNestedTypesScreen: View {
         Section(header: Text("Tags")) {
           List(viewModel.book.tags, id: \.self) { tag in
             Text(tag.title)
+              .foregroundColor(tag.color.accessibleFontColor)
+              .padding(.horizontal, 4)
+              .padding(.vertical, 2)
+              .background(tag.color)
+              .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
           }
           Button(action: viewModel.addTag) {
             Label("Add a tag", systemImage: "plus")

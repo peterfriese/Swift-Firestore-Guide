@@ -7,11 +7,11 @@
 
 import Foundation
 import FirebaseFirestoreSwift
-
+import SwiftUI
 
 struct Tag: Codable, Hashable {
   var title: String
-  var color: String
+  var color: Color
 }
 
 struct BookWithTags: Codable {
@@ -28,7 +28,7 @@ extension BookWithTags {
                                    numberOfPages: 350,
                                    author: "Peter Friese",
                                    tags: [
-                                    Tag(title: "Swift", color: "#f05138"),
-                                    Tag(title: "SwiftUI", color: "#012495")
+                                    Tag(title: "Swift", color: Color(hex: "#f05138")),
+                                    Tag(title: "SwiftUI", color: Color(hex: "#012495"))
                                    ])
 }
