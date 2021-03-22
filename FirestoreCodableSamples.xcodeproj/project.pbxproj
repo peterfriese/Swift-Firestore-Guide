@@ -29,6 +29,7 @@
 		8845C9A526050395008F2FA2 /* CustomizeMappingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9A426050395008F2FA2 /* CustomizeMappingScreen.swift */; };
 		8845C9A7260503D7008F2FA2 /* ColorEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9A6260503D7008F2FA2 /* ColorEntry.swift */; };
 		885435F2260897CC006188D9 /* MappingGeoPointsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885435F1260897CC006188D9 /* MappingGeoPointsScreen.swift */; };
+		887A4A802608EA7E009ACBB1 /* MappingEnumsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A4A7F2608EA7E009ACBB1 /* MappingEnumsScreen.swift */; };
 		887DD2B425C47A23003F7A99 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DD2B325C47A23003F7A99 /* Book.swift */; };
 		888F881425C46A9C00DCE039 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 888F881325C46A9C00DCE039 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		8845C9A426050395008F2FA2 /* CustomizeMappingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeMappingScreen.swift; sourceTree = "<group>"; };
 		8845C9A6260503D7008F2FA2 /* ColorEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEntry.swift; sourceTree = "<group>"; };
 		885435F1260897CC006188D9 /* MappingGeoPointsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingGeoPointsScreen.swift; sourceTree = "<group>"; };
+		887A4A7F2608EA7E009ACBB1 /* MappingEnumsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingEnumsScreen.swift; sourceTree = "<group>"; };
 		887DD2B325C47A23003F7A99 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		888F881325C46A9C00DCE039 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 				8845C9A02604C5AD008F2FA2 /* MappingColorsScreen.swift */,
 				8845C9A426050395008F2FA2 /* CustomizeMappingScreen.swift */,
 				885435F1260897CC006188D9 /* MappingGeoPointsScreen.swift */,
+				887A4A7F2608EA7E009ACBB1 /* MappingEnumsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				8845C99A2603E733008F2FA2 /* Color+Codable.swift in Sources */,
 				8845BD7A25C46965002AEC45 /* FirestoreCodableSamplesApp.swift in Sources */,
 				8845C9A526050395008F2FA2 /* CustomizeMappingScreen.swift in Sources */,
+				887A4A802608EA7E009ACBB1 /* MappingEnumsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

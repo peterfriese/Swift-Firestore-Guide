@@ -43,7 +43,9 @@ struct MenuScreen: View {
           NavigationLink(destination: MappingColorsScreen()) {
             Label("Mapping Colors", systemImage: "paintpalette")
           }
-          Label("Mapping Enums", systemImage: "list.number")
+          NavigationLink(destination: MappingEnumsScreen()) {
+            Label("Mapping Enums", systemImage: "list.number")
+          }
           NavigationLink(destination: CustomizeMappingScreen()) {
             Label("Custom mapping", systemImage: "sparkles.square.fill.on.square")
           }
