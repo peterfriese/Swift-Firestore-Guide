@@ -1,5 +1,5 @@
 //
-//  MappingColorsSCreen.swift
+//  CustomizeMappingScreen.swift
 //  FirestoreCodableSamples
 //
 //  Created by Peter Friese on 19.03.21.
@@ -9,9 +9,9 @@ import SwiftUI
 import Firebase
 import FirebaseFirestoreSwift
 
-class MappingColorsViewModel: ObservableObject {
-  @Published var colorEntries = [ColorEntry]()
-  @Published var newColor = ColorEntry.empty
+class CustomizeMappingViewModel: ObservableObject {
+  @Published var programmingLanguages = ProgrammingLanguage.sample // [ProgrammingLanguage]()
+  @Published var newLanguage = ProgrammingLanguage.empty
   @Published var errorMessage: String?
   
   private var db = Firestore.firestore()
@@ -26,22 +26,22 @@ class MappingColorsViewModel: ObservableObject {
   
   func subscribe() {
     if listenerRegistration == nil {
-      listenerRegistration = db.collection("colors")
+      listenerRegistration = db.collection("programming-languages")
         .addSnapshotListener { [weak self] (querySnapshot, error) in
           guard let documents = querySnapshot?.documents else {
-            self?.errorMessage = "No documents in 'colors' collection"
+            self?.errorMessage = "No documents in 'programming-languages' collection"
             return
           }
           
-          self?.colorEntries = documents.compactMap { queryDocumentSnapshot in
-            let result = Result { try queryDocumentSnapshot.data(as: ColorEntry.self) }
+          self?.programmingLanguages = documents.compactMap { queryDocumentSnapshot in
+            let result = Result { try queryDocumentSnapshot.data(as: ProgrammingLanguage.self) }
             
             switch result {
-            case .success(let colorEntry):
-              if let colorEntry = colorEntry {
-                // A ColorEntry value was successfully initialized from the DocumentSnapshot.
+            case .success(let programmingLanguage):
+              if let programmingLanguage = programmingLanguage {
+                // A ProgrammingLanguage value was successfully initialized from the DocumentSnapshot.
                 self?.errorMessage = nil
-                return colorEntry
+                return programmingLanguage
               }
               else {
                 // A nil value was successfully initialized from the DocumentSnapshot,
@@ -70,11 +70,11 @@ class MappingColorsViewModel: ObservableObject {
     }
   }
   
-  func addColorEntry() {
-    let collectionRef = db.collection("colors")
+  func addLanguage() {
+    let collectionRef = db.collection("programming-languages")
     do {
-      let newDocReference = try collectionRef.addDocument(from: newColor)
-      print("ColorEntry stored with new document reference: \(newDocReference)")
+      let newDocReference = try collectionRef.addDocument(from: newLanguage)
+      print("ProgrammingLanguage stored with new document reference: \(newDocReference)")
     }
     catch {
       print(error)
@@ -82,29 +82,28 @@ class MappingColorsViewModel: ObservableObject {
   }
 }
 
-struct MappingColorsScreen: View {
-  @StateObject var viewModel = MappingColorsViewModel()
+struct CustomizeMappingScreen: View {
+  @StateObject var viewModel = CustomizeMappingViewModel()
   
   var body: some View {
-    SampleScreen("Mapping Colors", introduction: "Mapping colors is easy once we conform Color to Codable.") {
+    SampleScreen("Customize Mapping", introduction: "We can use Codable's CodingKeys to customize Firestore's mapping") {
       Form {
-        Section(header: Text("Colors")) {
-          List(viewModel.colorEntries) { colorEntry in
-            Text("\(colorEntry.name) (\(colorEntry.color.toHex ?? ""))")
-              .listRowBackground(colorEntry.color)
-              .foregroundColor(colorEntry.color.accessibleFontColor)
-              .padding(.horizontal, 4)
-              .padding(.vertical, 2)
-              .background(colorEntry.color)
-              .cornerRadius(3.0)
+        Section(header: Text("Programming Languages")) {
+          List(viewModel.programmingLanguages) { language in
+            HStack {
+              Text(language.name)
+              Spacer()
+              Text("Released: \(language.yearAsString)")
+                .font(.caption)
+            }
           }
         }
         Section {
-          ColorPicker(selection: $viewModel.newColor.color) {
-            Label("First, pick color", systemImage: "paintpalette")
-          }
-          Button(action: viewModel.addColorEntry ) {
-            Label("Then add it", systemImage: "plus")
+          TextField("Language name", text: $viewModel.newLanguage.name)
+          TextField("Reason I love this", text: $viewModel.newLanguage.reasonWhyILoveThis)
+          DatePicker("Date of release", selection: $viewModel.newLanguage.year, displayedComponents: [.date])
+          Button(action: viewModel.addLanguage ) {
+            Label("Add new language", systemImage: "plus")
           }
         }
       }
@@ -118,14 +117,14 @@ struct MappingColorsScreen: View {
   }
 }
 
-struct MappingColorsScreen_Previews: PreviewProvider {
+struct CustomizeMappingScreen_Previews: PreviewProvider {
   static var previews: some View {
     Group {
       NavigationView {
-        MappingColorsScreen()
+        CustomizeMappingScreen()
       }
       NavigationView {
-        MappingColorsScreen()
+        CustomizeMappingScreen()
       }
       .preferredColorScheme(.dark)
     }

@@ -23,9 +23,12 @@
 		8845C9962603A74C008F2FA2 /* BookWithCoverImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9952603A74C008F2FA2 /* BookWithCoverImages.swift */; };
 		8845C9982603C853008F2FA2 /* MappingCustomTypesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9972603C853008F2FA2 /* MappingCustomTypesScreen.swift */; };
 		8845C99A2603E733008F2FA2 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9992603E733008F2FA2 /* Color+Codable.swift */; };
-		8845C99D2603E8FF008F2FA2 /* iColor in Frameworks */ = {isa = PBXBuildFile; productRef = 8845C99C2603E8FF008F2FA2 /* iColor */; };
 		8845C99F2604C064008F2FA2 /* Color+FontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C99E2604C064008F2FA2 /* Color+FontColor.swift */; };
 		8845C9A12604C5AE008F2FA2 /* MappingColorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9A02604C5AD008F2FA2 /* MappingColorsScreen.swift */; };
+		8845C9A32604ECA0008F2FA2 /* ProgrammingLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9A22604ECA0008F2FA2 /* ProgrammingLanguage.swift */; };
+		8845C9A526050395008F2FA2 /* CustomizeMappingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9A426050395008F2FA2 /* CustomizeMappingScreen.swift */; };
+		8845C9A7260503D7008F2FA2 /* ColorEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845C9A6260503D7008F2FA2 /* ColorEntry.swift */; };
+		885435F2260897CC006188D9 /* MappingGeoPointsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885435F1260897CC006188D9 /* MappingGeoPointsScreen.swift */; };
 		887DD2B425C47A23003F7A99 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DD2B325C47A23003F7A99 /* Book.swift */; };
 		888F881425C46A9C00DCE039 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 888F881325C46A9C00DCE039 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -49,6 +52,10 @@
 		8845C9992603E733008F2FA2 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 		8845C99E2604C064008F2FA2 /* Color+FontColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+FontColor.swift"; sourceTree = "<group>"; };
 		8845C9A02604C5AD008F2FA2 /* MappingColorsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingColorsScreen.swift; sourceTree = "<group>"; };
+		8845C9A22604ECA0008F2FA2 /* ProgrammingLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguage.swift; sourceTree = "<group>"; };
+		8845C9A426050395008F2FA2 /* CustomizeMappingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeMappingScreen.swift; sourceTree = "<group>"; };
+		8845C9A6260503D7008F2FA2 /* ColorEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEntry.swift; sourceTree = "<group>"; };
+		885435F1260897CC006188D9 /* MappingGeoPointsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingGeoPointsScreen.swift; sourceTree = "<group>"; };
 		887DD2B325C47A23003F7A99 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		888F881325C46A9C00DCE039 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,7 +67,6 @@
 			files = (
 				8805D39425D49A7300851C96 /* FirebaseFirestore in Frameworks */,
 				8805D39625D49A7300851C96 /* FirebaseFirestoreSwift-Beta in Frameworks */,
-				8845C99D2603E8FF008F2FA2 /* iColor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +132,8 @@
 				8845C98F26038433008F2FA2 /* MappingArraysScreen.swift */,
 				8845C9932603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift */,
 				8845C9A02604C5AD008F2FA2 /* MappingColorsScreen.swift */,
+				8845C9A426050395008F2FA2 /* CustomizeMappingScreen.swift */,
+				885435F1260897CC006188D9 /* MappingGeoPointsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -154,6 +162,8 @@
 				8845C98D260383C6008F2FA2 /* BookWithGenre.swift */,
 				8845C9912603A15A008F2FA2 /* BookWithTags.swift */,
 				8845C9952603A74C008F2FA2 /* BookWithCoverImages.swift */,
+				8845C9A22604ECA0008F2FA2 /* ProgrammingLanguage.swift */,
+				8845C9A6260503D7008F2FA2 /* ColorEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,7 +194,6 @@
 			packageProductDependencies = (
 				8805D39325D49A7300851C96 /* FirebaseFirestore */,
 				8805D39525D49A7300851C96 /* FirebaseFirestoreSwift-Beta */,
-				8845C99C2603E8FF008F2FA2 /* iColor */,
 			);
 			productName = FirestoreCodableSamples;
 			productReference = 8845BD7625C46965002AEC45 /* FirestoreCodableSamples.app */;
@@ -215,7 +224,6 @@
 			mainGroup = 8845BD6D25C46965002AEC45;
 			packageReferences = (
 				8805D39225D49A7300851C96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				8845C99B2603E8FE008F2FA2 /* XCRemoteSwiftPackageReference "iColor" */,
 			);
 			productRefGroup = 8845BD7725C46965002AEC45 /* Products */;
 			projectDirPath = "";
@@ -248,17 +256,21 @@
 				8845C9922603A15A008F2FA2 /* BookWithTags.swift in Sources */,
 				8845C99F2604C064008F2FA2 /* Color+FontColor.swift in Sources */,
 				8845C98526020142008F2FA2 /* MenuScreen.swift in Sources */,
+				8845C9A7260503D7008F2FA2 /* ColorEntry.swift in Sources */,
 				8845C9962603A74C008F2FA2 /* BookWithCoverImages.swift in Sources */,
 				8845C99026038433008F2FA2 /* MappingArraysScreen.swift in Sources */,
 				8845C98726020601008F2FA2 /* SampleScreen.swift in Sources */,
 				8845C9942603A286008F2FA2 /* MappingArraysWithNestedTypesScreen.swift in Sources */,
+				885435F2260897CC006188D9 /* MappingGeoPointsScreen.swift in Sources */,
 				887DD2B425C47A23003F7A99 /* Book.swift in Sources */,
 				8845C9A12604C5AE008F2FA2 /* MappingColorsScreen.swift in Sources */,
 				8845C98C260346A9008F2FA2 /* ManuallyMappingSimpleTypesScreen.swift in Sources */,
+				8845C9A32604ECA0008F2FA2 /* ProgrammingLanguage.swift in Sources */,
 				8845C9982603C853008F2FA2 /* MappingCustomTypesScreen.swift in Sources */,
 				8845C98A26020FA3008F2FA2 /* MappingSimpleTypesScreen.swift in Sources */,
 				8845C99A2603E733008F2FA2 /* Color+Codable.swift in Sources */,
 				8845BD7A25C46965002AEC45 /* FirestoreCodableSamplesApp.swift in Sources */,
+				8845C9A526050395008F2FA2 /* CustomizeMappingScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,14 +469,6 @@
 				minimumVersion = 7.8.0;
 			};
 		};
-		8845C99B2603E8FE008F2FA2 /* XCRemoteSwiftPackageReference "iColor" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/iSwiftUIHome/iColor";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -477,11 +481,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8805D39225D49A7300851C96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
-		};
-		8845C99C2603E8FF008F2FA2 /* iColor */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8845C99B2603E8FE008F2FA2 /* XCRemoteSwiftPackageReference "iColor" */;
-			productName = iColor;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

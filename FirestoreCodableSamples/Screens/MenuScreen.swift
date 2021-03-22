@@ -34,16 +34,19 @@ struct MenuScreen: View {
           NavigationLink(destination: MappingArraysWithNestedTypesScreen()) {
             Label("Mapping arrays w/ custom types", systemImage: "square.stack.3d.down.forward")
           }
-          Label("Mapping dates and times", systemImage: "calendar.badge.clock")
-          Label("Mapping GeoPoints", systemImage: "globe")
+          NavigationLink(destination: CustomizeMappingScreen()) {
+            Label("Mapping dates and times", systemImage: "calendar.badge.clock")
+          }
+          NavigationLink(destination: MappingGeoPointsScreen()) {
+            Label("Mapping GeoPoints", systemImage: "globe")
+          }
           NavigationLink(destination: MappingColorsScreen()) {
             Label("Mapping Colors", systemImage: "paintpalette")
           }
           Label("Mapping Enums", systemImage: "list.number")
-        }
-        Section(header: Text("Custom mapping")) {
-          Label("Omit fields", systemImage: "eye.slash")
-          Label("Adjust field names", systemImage: "dial.max")
+          NavigationLink(destination: CustomizeMappingScreen()) {
+            Label("Custom mapping", systemImage: "sparkles.square.fill.on.square")
+          }
         }
       }
     }
