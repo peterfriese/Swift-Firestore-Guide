@@ -15,53 +15,98 @@ class MappingSimpleTypesViewModel: ObservableObject {
   
   private var db = Firestore.firestore()
   
+  /// Use this to alteratively use async/await or callback-based implementations
+  let useAsync = false
+  
   func fetchAndMap() {
-    fetchBook(documentId: "hitchhiker")
+    if useAsync {
+      Task {
+        await fetchBookAsync(documentId: "hitchhiker")
+      }
+    }
+    else {
+      fetchBook(documentId: "hitchhiker")
+    }
   }
   
   func fetchAndMapNonExisting() {
-    fetchBook(documentId: "does-not-exist")
+    if useAsync {
+      Task {
+        await fetchBookAsync(documentId: "does-not-exist")
+      }
+    }
+    else {
+      fetchBook(documentId: "does-not-exist")
+    }
   }
   
   func fetchAndTryMappingInvalidData() {
-    fetchBook(documentId: "invalid-data")
+    if useAsync {
+      Task {
+        await fetchBookAsync(documentId: "invalid-data")
+      }
+    }
+    else {
+      fetchBook(documentId: "invalid-data")
+    }
+  }
+  
+  /// Alternative implementation that shows how to use async/await to call `getDocument`
+  /// This needs to be marked as @MainActor so that we can safely access the errorMessage
+  /// published property when encountering an error.
+  @MainActor
+  private func fetchBookAsync(documentId: String) async {
+    let docRef = db.collection("books").document(documentId)
+    do {
+      self.book = try await docRef.getDocument(as: Book.self)
+    }
+    catch {
+      switch error {
+      case DecodingError.typeMismatch(_, let context):
+        self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+      case DecodingError.valueNotFound(_, let context):
+        self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+      case DecodingError.keyNotFound(_, let context):
+        self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+      case DecodingError.dataCorrupted(let key):
+        self.errorMessage = "\(error.localizedDescription): \(key)"
+      default:
+        self.errorMessage = "Error decoding document: \(error.localizedDescription)"
+      }
+    }
   }
   
   private func fetchBook(documentId: String) {
     let docRef = db.collection("books").document(documentId)
     
-    docRef.getDocument { document, error in
-      if let error = error as NSError? {
-        self.errorMessage = "Error getting document: \(error.localizedDescription)"
-      }
-      else {
-        let result = Result { try document?.data(as: Book.self) }
-        switch result {
-        case .success(let book):
-          if let book = book {
-            // A Book value was successfully initialized from the DocumentSnapshot.
-            self.book = book
-            self.errorMessage = nil
-          }
-          else {
-            // A nil value was successfully initialized from the DocumentSnapshot,
-            // or the DocumentSnapshot was nil.
-            self.errorMessage = "Document doesn't exist."
-          }
-        case .failure(let error):
-          // A Book value could not be initialized from the DocumentSnapshot.
-          switch error {
-          case DecodingError.typeMismatch(_, let context):
-            self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
-          case DecodingError.valueNotFound(_, let context):
-            self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
-          case DecodingError.keyNotFound(_, let context):
-            self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
-          case DecodingError.dataCorrupted(let key):
-            self.errorMessage = "\(error.localizedDescription): \(key)"
-          default:
-            self.errorMessage = "Error decoding document: \(error.localizedDescription)"
-          }
+    // If you expect that a document might *not exist*, use an optional type (Book?.self)
+    // and then perform an `if let book = book` dance to handle this case.
+    docRef.getDocument(as: Book?.self) { result in
+      switch result {
+      case .success(let book):
+        if let book = book {
+          // A Book value was successfully initialized from the DocumentSnapshot.
+          self.book = book
+          self.errorMessage = nil
+        }
+        else {
+          // A nil value was successfully initialized from the DocumentSnapshot,
+          // or the DocumentSnapshot was nil.
+          self.errorMessage = "Document doesn't exist."
+        }
+      case .failure(let error):
+        // A Book value could not be initialized from the DocumentSnapshot.
+        switch error {
+        case DecodingError.typeMismatch(_, let context):
+          self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+        case DecodingError.valueNotFound(_, let context):
+          self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+        case DecodingError.keyNotFound(_, let context):
+          self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+        case DecodingError.dataCorrupted(let key):
+          self.errorMessage = "\(error.localizedDescription): \(key)"
+        default:
+          self.errorMessage = "Error decoding document: \(error.localizedDescription)"
         }
       }
     }
