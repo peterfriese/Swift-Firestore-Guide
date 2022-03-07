@@ -79,6 +79,33 @@ class MappingSimpleTypesViewModel: ObservableObject {
   private func fetchBook(documentId: String) {
     let docRef = db.collection("books").document(documentId)
     
+    docRef.getDocument(as: Book.self) { result in
+      switch result {
+      case .success(let book):
+        // A Book value was successfully initialized from the DocumentSnapshot.
+        self.book = book
+        self.errorMessage = nil
+      case .failure(let error):
+        // A Book value could not be initialized from the DocumentSnapshot.
+        switch error {
+        case DecodingError.typeMismatch(_, let context):
+          self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+        case DecodingError.valueNotFound(_, let context):
+          self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+        case DecodingError.keyNotFound(_, let context):
+          self.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+        case DecodingError.dataCorrupted(let key):
+          self.errorMessage = "\(error.localizedDescription): \(key)"
+        default:
+          self.errorMessage = "Error decoding document: \(error.localizedDescription)"
+        }
+      }
+    }
+  }
+  
+  private func fetchBookOptional(documentId: String) {
+    let docRef = db.collection("books").document(documentId)
+    
     // If you expect that a document might *not exist*, use an optional type (Book?.self)
     // and then perform an `if let book = book` dance to handle this case.
     docRef.getDocument(as: Book?.self) { result in
