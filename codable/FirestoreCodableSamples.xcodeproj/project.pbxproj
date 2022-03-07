@@ -35,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		880AE05F27D679AC00165404 /* firebase-ios-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "firebase-ios-sdk"; path = "../../../../Projects/Incubation/Firebase/firebase-documentsnapshot-typing/firebase-ios-sdk"; sourceTree = "<group>"; };
 		8845BD7625C46965002AEC45 /* FirestoreCodableSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreCodableSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8845BD7925C46965002AEC45 /* FirestoreCodableSamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCodableSamplesApp.swift; sourceTree = "<group>"; };
 		8845BD7D25C46967002AEC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		887A4A7F2608EA7E009ACBB1 /* MappingEnumsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingEnumsScreen.swift; sourceTree = "<group>"; };
 		887DD2B325C47A23003F7A99 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		888F881325C46A9C00DCE039 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		88BBF4452790B29800A6D1A7 /* firebase-ios-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "firebase-ios-sdk"; path = "../../../Projects/Incubation/Firebase/firebase-documentsnapshot-typing/firebase-ios-sdk"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +183,7 @@
 		88BBF4442790B29800A6D1A7 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				88BBF4452790B29800A6D1A7 /* firebase-ios-sdk */,
+				880AE05F27D679AC00165404 /* firebase-ios-sdk */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -480,7 +480,7 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.8.0;
+				minimumVersion = 8.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
