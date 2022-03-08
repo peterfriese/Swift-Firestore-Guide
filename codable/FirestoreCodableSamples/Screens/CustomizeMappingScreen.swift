@@ -38,17 +38,9 @@ class CustomizeMappingViewModel: ObservableObject {
             
             switch result {
             case .success(let programmingLanguage):
-              if let programmingLanguage = programmingLanguage {
-                // A ProgrammingLanguage value was successfully initialized from the DocumentSnapshot.
-                self?.errorMessage = nil
-                return programmingLanguage
-              }
-              else {
-                // A nil value was successfully initialized from the DocumentSnapshot,
-                // or the DocumentSnapshot was nil.
-                self?.errorMessage = "Document doesn't exist."
-                return nil
-              }
+              // A ProgrammingLanguage value was successfully initialized from the DocumentSnapshot.
+              self?.errorMessage = nil
+              return programmingLanguage
             case .failure(let error):
               // A Book value could not be initialized from the DocumentSnapshot.
               switch error {

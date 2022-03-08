@@ -35,22 +35,13 @@ class MappingColorsViewModel: ObservableObject {
           
           self?.colorEntries = documents.compactMap { queryDocumentSnapshot in
             let result = Result { try queryDocumentSnapshot.data(as: ColorEntry.self) }
-            
             switch result {
             case .success(let colorEntry):
-              if let colorEntry = colorEntry {
-                // A ColorEntry value was successfully initialized from the DocumentSnapshot.
-                self?.errorMessage = nil
-                return colorEntry
-              }
-              else {
-                // A nil value was successfully initialized from the DocumentSnapshot,
-                // or the DocumentSnapshot was nil.
-                self?.errorMessage = "Document doesn't exist."
-                return nil
-              }
+              // A ColorEntry value was successfully initialized from the DocumentSnapshot.
+              self?.errorMessage = nil
+              return colorEntry
             case .failure(let error):
-              // A Book value could not be initialized from the DocumentSnapshot.
+              // A ColorEntry value could not be initialized from the DocumentSnapshot.
               switch error {
               case DecodingError.typeMismatch(_, let context):
                 self?.errorMessage = "\(error.localizedDescription): \(context.debugDescription)"

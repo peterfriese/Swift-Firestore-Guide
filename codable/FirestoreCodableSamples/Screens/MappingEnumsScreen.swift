@@ -76,17 +76,9 @@ class MappingEnumsViewModel: ObservableObject {
             
             switch result {
             case .success(let article):
-              if let article = article {
-                // An Article value was successfully initialized from the DocumentSnapshot.
-                self?.errorMessage = nil
-                return article
-              }
-              else {
-                // A nil value was successfully initialized from the DocumentSnapshot,
-                // or the DocumentSnapshot was nil.
-                self?.errorMessage = "Document doesn't exist."
-                return nil
-              }
+              // An Article value was successfully initialized from the DocumentSnapshot.
+              self?.errorMessage = nil
+              return article
             case .failure(let error):
               // An Article value could not be initialized from the DocumentSnapshot.
               switch error {

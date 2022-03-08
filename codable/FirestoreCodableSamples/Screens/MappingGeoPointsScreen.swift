@@ -82,17 +82,9 @@ class MappingGeoPointsViewModel: ObservableObject {
             
             switch result {
             case .success(let office):
-              if let office = office {
-                // An Office value was successfully initialized from the DocumentSnapshot.
-                self?.errorMessage = nil
-                return office
-              }
-              else {
-                // A nil value was successfully initialized from the DocumentSnapshot,
-                // or the DocumentSnapshot was nil.
-                self?.errorMessage = "Document doesn't exist."
-                return nil
-              }
+              // An Office value was successfully initialized from the DocumentSnapshot.
+              self?.errorMessage = nil
+              return office
             case .failure(let error):
               // An Office value could not be initialized from the DocumentSnapshot.
               switch error {
