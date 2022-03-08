@@ -35,7 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		880AE05F27D679AC00165404 /* firebase-ios-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "firebase-ios-sdk"; path = "../../../../Projects/Incubation/Firebase/firebase-documentsnapshot-typing/firebase-ios-sdk"; sourceTree = "<group>"; };
 		8845BD7625C46965002AEC45 /* FirestoreCodableSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreCodableSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8845BD7925C46965002AEC45 /* FirestoreCodableSamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCodableSamplesApp.swift; sourceTree = "<group>"; };
 		8845BD7D25C46967002AEC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -183,7 +182,6 @@
 		88BBF4442790B29800A6D1A7 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				880AE05F27D679AC00165404 /* firebase-ios-sdk */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
