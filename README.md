@@ -20,7 +20,7 @@
   <p align="center">
     Code for my series about Firestore and Swift
     <br />
-    <a href="https://peterfriese.dev/firestore-codable-the-comprehensive-guide"><strong>Read the article »</strong></a>
+    <a href="https://peterfriese.dev/posts/firestore-codable-the-comprehensive-guide"><strong>Read the article »</strong></a>
     <br />
     <br />
     <a href="https://github.com/peterfriese/Swift-Firestore-Guide/issues">Report Bug</a>
