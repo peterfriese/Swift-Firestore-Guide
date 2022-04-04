@@ -7,11 +7,15 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
 
 @main
 struct FirestoreCodableSamplesApp: App {
   init() {
     FirebaseApp.configure()
+    
+    Auth.auth().useEmulator(withHost:"localhost", port:9099)
+    Auth.auth().signInAnonymously()
     
     // connect to Firestore Emulator
     Firestore.firestore().useEmulator(withHost: "localhost", port: 8080)
