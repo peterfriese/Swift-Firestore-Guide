@@ -1,9 +1,20 @@
 //
-//  MappingSimpleTypesScreen.swift
-//  FirestoreCodableSamples
+// MappingSimpleTypesScreen.swift
+// FirestoreCodableSamples
 //
-//  Created by Peter Friese on 17.03.21.
+// Created by Peter Friese on 17.03.21.
 //
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 import SwiftUI
 import Firebase
@@ -18,7 +29,7 @@ class MappingSimpleTypesViewModel: ObservableObject {
   /// Use this to alteratively use async/await or callback-based implementations
   let useAsync = false
   
-  func fetchAndMap() {
+  fileprivate func fetchAndMap() {
     if useAsync {
       Task {
         await fetchBookAsync(documentId: "hitchhiker")
@@ -29,7 +40,7 @@ class MappingSimpleTypesViewModel: ObservableObject {
     }
   }
   
-  func fetchAndMapNonExisting() {
+  fileprivate func fetchAndMapNonExisting() {
     if useAsync {
       Task {
         await fetchBookAsync(documentId: "does-not-exist")
@@ -40,7 +51,7 @@ class MappingSimpleTypesViewModel: ObservableObject {
     }
   }
   
-  func fetchAndTryMappingInvalidData() {
+  fileprivate func fetchAndTryMappingInvalidData() {
     if useAsync {
       Task {
         await fetchBookAsync(documentId: "invalid-data")
@@ -139,7 +150,7 @@ class MappingSimpleTypesViewModel: ObservableObject {
     }
   }
   
-  func updateBook() {
+  fileprivate func updateBook() {
     if let id = book.id {
       let docRef = db.collection("books").document(id)
       do {
@@ -151,7 +162,7 @@ class MappingSimpleTypesViewModel: ObservableObject {
     }
   }
   
-  func addBook() {
+  fileprivate func addBook() {
     let collectionRef = db.collection("books")
     do {
       let newDocReference = try collectionRef.addDocument(from: self.book)

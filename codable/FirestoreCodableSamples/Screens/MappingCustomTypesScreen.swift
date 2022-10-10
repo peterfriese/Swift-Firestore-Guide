@@ -1,9 +1,20 @@
 //
-//  MappingCustomTypesScreen.swift
-//  FirestoreCodableSamples
+// MappingCustomTypesScreen.swift
+// FirestoreCodableSamples
 //
-//  Created by Peter Friese on 18.03.21.
+// Created by Peter Friese on 18.03.21.
 //
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 import SwiftUI
 import Firebase
@@ -15,7 +26,7 @@ class MappingCustomTypesViewModel: ObservableObject {
   
   private var db = Firestore.firestore()
   
-  func fetchAndMap() {
+  fileprivate func fetchAndMap() {
     fetchBook(documentId: "hitchhiker-image-urls")
   }
   
@@ -46,7 +57,7 @@ class MappingCustomTypesViewModel: ObservableObject {
     }
   }
   
-  func updateBook() {
+  fileprivate func updateBook() {
     if let id = book.id {
       let docRef = db.collection("books").document(id)
       do {
@@ -58,7 +69,7 @@ class MappingCustomTypesViewModel: ObservableObject {
     }
   }
   
-  func addBook() {
+  fileprivate func addBook() {
     let collectionRef = db.collection("books")
     do {
       let newDocReference = try collectionRef.addDocument(from: self.book)

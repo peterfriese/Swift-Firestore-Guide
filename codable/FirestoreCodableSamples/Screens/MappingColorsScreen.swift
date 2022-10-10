@@ -1,9 +1,20 @@
 //
-//  MappingColorsSCreen.swift
-//  FirestoreCodableSamples
+// MappingColorsSCreen.swift
+// FirestoreCodableSamples
 //
-//  Created by Peter Friese on 19.03.21.
+// Created by Peter Friese on 19.03.21.
 //
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 import SwiftUI
 import Firebase
@@ -17,14 +28,14 @@ class MappingColorsViewModel: ObservableObject {
   private var db = Firestore.firestore()
   private var listenerRegistration: ListenerRegistration?
   
-  public func unsubscribe() {
+  fileprivate  func unsubscribe() {
     if listenerRegistration != nil {
       listenerRegistration?.remove()
       listenerRegistration = nil
     }
   }
   
-  func subscribe() {
+  fileprivate func subscribe() {
     if listenerRegistration == nil {
       listenerRegistration = db.collection("colors")
         .addSnapshotListener { [weak self] (querySnapshot, error) in
@@ -61,7 +72,7 @@ class MappingColorsViewModel: ObservableObject {
     }
   }
   
-  func addColorEntry() {
+  fileprivate func addColorEntry() {
     let collectionRef = db.collection("colors")
     do {
       let newDocReference = try collectionRef.addDocument(from: newColor)
