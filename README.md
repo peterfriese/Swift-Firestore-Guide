@@ -80,7 +80,7 @@ You won't have to set up a Firebase project to run this sample, as it makes use 
     ```
 1. Open the project in Xcode
     ```bash
-    $ .xed .
+    $ xed .
     ```
 1. Run the iOS project on a local Simulator (so it can connect to the Firebase Emulator)
 
