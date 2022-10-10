@@ -39,8 +39,10 @@ struct FirestoreCodableSamplesApp: App {
   
   var body: some Scene {
     WindowGroup {
-      NavigationView {
+      NavigationSplitView {
         MenuScreen()
+      } detail: {
+        Text("Select an item from the menu on the left.")
       }
     }
   }

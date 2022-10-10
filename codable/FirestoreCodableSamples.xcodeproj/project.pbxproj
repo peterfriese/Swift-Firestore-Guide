@@ -84,7 +84,6 @@
 		8845BD6D25C46965002AEC45 = {
 			isa = PBXGroup;
 			children = (
-				88BBF4442790B29800A6D1A7 /* Packages */,
 				8845BD7825C46965002AEC45 /* FirestoreCodableSamples */,
 				8845BD7725C46965002AEC45 /* Products */,
 				887DD2AD25C479FD003F7A99 /* Frameworks */,
@@ -177,13 +176,6 @@
 				88014F1F28F412AF0081CB49 /* Article.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		88BBF4442790B29800A6D1A7 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,7 +410,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FirestoreCodableSamples/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +436,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FirestoreCodableSamples/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
